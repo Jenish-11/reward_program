@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addPinPost, addPost, addSchedulePost, deletePost, getAllPosts, getSchedulePost } from "../services/postService";
+import { addPinPost, addPost, addSchedulePost, deletePost, deleteSchedulePost, getAllPosts, getSchedulePost } from "../services/postService";
 
 // const initialState = {
 //   addPost: { data: [], isFetching: false, error: null },
@@ -14,6 +14,7 @@ const settingCases = [
   { api: addPinPost, name: "addPinPost" },
   { api: deletePost, name: "deletePost" },
   { api: getSchedulePost, name: "getSchedulePost" },
+  { api: deleteSchedulePost, name: "deleteSchedulePost" },
 ];
 
 settingCases.forEach((api) => {

@@ -27,6 +27,21 @@ export const addSchedulePost = createAsyncThunk(
     }
   }
 );
+//DElete schedulepost
+export const deleteSchedulePost = createAsyncThunk(
+  "deleteSchedulePost",
+  async (id, thunkAPI) => {
+    try {
+      if (id == "DESTROY") {
+        return null;
+      }
+      const res = await API.delete(`/schedule_post/${id}`);
+      return res;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
 //GEt SchedulePost
 export const getSchedulePost = createAsyncThunk(
   "getSchedulePost",

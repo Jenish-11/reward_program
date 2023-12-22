@@ -19,8 +19,9 @@ import { UserContext } from "../../../App";
 import { useDispatch } from "react-redux";
 import { addPinPost, getAllPosts } from "../../../redux/services/postService";
 import dayjs from "dayjs";
+import { lastseen } from "../../../helpers/utils";
 
-export default function PostImage({ data, index, className }) {
+export default function PostImage({ data, index, className, schd }) {
   const dispatch = useDispatch();
   const { setDeletePop } = useContext(UserContext);
   const { employee, award } = data;
@@ -44,14 +45,17 @@ export default function PostImage({ data, index, className }) {
           id: data?.id,
         })
       ).unwrap();
-      dispatch(getAllPosts())
+      dispatch(getAllPosts());
     } catch (error) {
       console.log(error);
     }
   };
   return (
     <>
-      <Paper sx={{ py: 4, px: 2,width:"100%" }} className={"paper-border " + className}>
+      <Paper
+        sx={{ py: 4, px: 2, width: "100%" }}
+        className={"paper-border " + className}
+      >
         <Grid container columnSpacing={3} position={"relative"}>
           <Grid item lg={1.5} className="flex-column" gap={2}>
             <Avatar src={user1} sx={{ aspectRatio: "1" }} />
@@ -63,7 +67,9 @@ export default function PostImage({ data, index, className }) {
                 {employee?.name}{" "}
                 {data?.appreciated ? "Appreciated for" : "Recieved a"}{" "}
                 {award?.name} <br />
-                <Typography variant="xs">8 minutes ago . by malar </Typography>
+                <Typography variant="xs">
+                  {lastseen(data?.created_at)} . by Jenish{" "}
+                </Typography>
               </Typography>
 
               <Typography
@@ -112,18 +118,23 @@ export default function PostImage({ data, index, className }) {
                   startIcon={<DeleteIcon />}
                   variant="text-only"
                   sx={{ p: 0 }}
-                  onClick={() => setDeletePop(data?.id)}
+                  onClick={() => {
+                    if (schd) setDeletePop({id:data?.id,type:"schd"});
+                    else setDeletePop(data?.id);
+                  }}
                 >
                   Delete
                 </Button>
-                <Button
-                  startIcon={<PushPinIcon />}
-                  sx={{ p: 0 }}
-                  variant="text-only"
-                  onClick={() => handleSetPin()}
-                >
-                  Pin to Top
-                </Button>
+                {!schd && (
+                  <Button
+                    startIcon={<PushPinIcon />}
+                    sx={{ p: 0 }}
+                    variant="text-only"
+                    onClick={() => handleSetPin()}
+                  >
+                    Pin to Top
+                  </Button>
+                )}
               </Box>
             </Popover>
           </Grid>

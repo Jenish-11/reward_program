@@ -67,6 +67,7 @@ export default function PerformerCard({ team }) {
                       sx={{ fontSize: "14px", px: 1, py: 0 }}
                     >
                       {data?.recieved_points}
+                      {team&& 5000}
                     </Button>
                   </Grid>
                 );

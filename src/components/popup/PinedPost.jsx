@@ -3,7 +3,13 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { UserContext } from "../../App";
 
-import { Dialog, DialogContent, DialogTitle, Typography } from "@mui/material";
+import {
+  CircularProgress,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  Typography,
+} from "@mui/material";
 import PostImage from "../rewardprogram/feedComponents/PostImage";
 import { useDispatch, useSelector } from "react-redux";
 import { addPinPost, getAllPosts } from "../../redux/services/postService";
@@ -12,8 +18,9 @@ import dayjs from "dayjs";
 export default function PinedPostPop() {
   const { pinPop, setPinPop } = React.useContext(UserContext);
   const dispatch = useDispatch();
-  const { posts } = useSelector((state) => ({
+  const { posts, loading } = useSelector((state) => ({
     posts: state.postSlice.posts?.data,
+    loading: state.postSlice.posts?.loading,
   }));
 
   const handleSetPin = async (id) => {
@@ -30,24 +37,26 @@ export default function PinedPostPop() {
     }
   };
 
-  let pinnedposts = posts?.map((item, i) => {
-    if (item?.pin)
-      return (
-        <Box className="pinpost flex-column w-full" gap={3}>
-          <Box className="flex-row" gap={2}>
-            <span>Post{i + 1}</span>{" "}
-            <Button
-              className="unpin"
-              endIcon={<ClearIcon fontSize="10px" />}
-              onClick={() => handleSetPin(item.id)}
-            >
-              Unpin{" "}
-            </Button>
+  let pinnedposts = posts
+    ?.filter((item) => item?.pin)
+    .map((item, i) => {
+      if (item?.pin)
+        return (
+          <Box className="pinpost flex-column w-full" gap={3}>
+            <Box className="flex-row" gap={2}>
+              <span>Post{i + 1}</span>{" "}
+              <Button
+                className="unpin"
+                endIcon={<ClearIcon fontSize="10px" />}
+                onClick={() => handleSetPin(item.id)}
+              >
+                Unpin{" "}
+              </Button>
+            </Box>
+            <PostImage data={item} index={i} key={i} className="pinpost" />
           </Box>
-          <PostImage data={item} index={i} key={i} className="pinpost" />
-        </Box>
-      );
-  });
+        );
+    });
 
   React.useEffect(() => {
     dispatch(getAllPosts());
@@ -71,7 +80,12 @@ export default function PinedPostPop() {
             alignItems={"center"}
             gap={2}
           >
-            {pinnedposts ? pinnedposts : "No Pinned Post"}
+            {loading && (
+              <center>
+                <CircularProgress />
+              </center>
+            )}
+            {!loading && (pinnedposts?.[0] ? pinnedposts : "No Pinned Post")}
           </Box>
         </DialogContent>
       </Dialog>

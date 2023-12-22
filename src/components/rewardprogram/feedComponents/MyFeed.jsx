@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Typography } from "@mui/material";
+import { Box, CircularProgress, Divider, Grid, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import SharThoughts from "./SharThoughts";
 import AppreciationPost from "./AppreciationPost";
@@ -8,8 +8,9 @@ import { getAllPosts } from "../../../redux/services/postService";
 
 export default function MyFeed() {
   const dispatch = useDispatch();
-  const { posts = [], addPost } = useSelector((state) => ({
+  const { posts = [], addPost,loading } = useSelector((state) => ({
     posts: state.postSlice.posts?.data,
+    loading:state.postSlice.posts?.loading,
     addPost: state.postSlice.addPost?.data,
   }));
   console.log(posts);
@@ -38,7 +39,8 @@ export default function MyFeed() {
           </Grid>
         </Grid>
         {/* <AppreciationPost /> */}
-        <Box height={"80vh"} overflow={"auto"} className="flex-column" gap={2}>
+        {loading&&<center><CircularProgress/></center>}
+        <Box height={"80vh"} overflow={"auto"} className="flex-column" mb={2} gap={2}>
           {posts?.map((item, i) => {
             return <PostImage data={item} index={i} />;
           })}

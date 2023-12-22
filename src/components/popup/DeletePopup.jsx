@@ -8,15 +8,25 @@ import { Dialog, DialogContent, Typography } from "@mui/material";
 import ImageCommon from "../ImageComponents/ImageCommon";
 import { warning } from "../../helpers/images";
 import { useDispatch } from "react-redux";
-import { deletePost, getAllPosts } from "../../redux/services/postService";
+import {
+  deletePost,
+  deleteSchedulePost,
+  getAllPosts,
+  getSchedulePost,
+} from "../../redux/services/postService";
 
 export default function DeletePopuUp() {
   const dispatch = useDispatch();
   const { deletePop, setDeletePop } = React.useContext(UserContext);
   const handleDelete = async () => {
     try {
+      if (deletePop?.type == "schd") {
+        await dispatch(deleteSchedulePost(deletePop?.id)).unwrap();
+        dispatch(getSchedulePost());
+        return setDeletePop(null);
+      }
       await dispatch(deletePost(deletePop)).unwrap();
-      dispatch(getAllPosts())
+      dispatch(getAllPosts());
       setDeletePop(null);
     } catch (error) {
       console.log(error);

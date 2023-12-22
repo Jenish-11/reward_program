@@ -35,7 +35,7 @@ import {
 import { getTeams } from "../../redux/services/teamService";
 import { useDispatch, useSelector } from "react-redux";
 import { getAwards } from "../../redux/services/rewardService";
-import { addPost, addSchedulePost } from "../../redux/services/postService";
+import { addPost, addSchedulePost, getAllPosts, getSchedulePost } from "../../redux/services/postService";
 import ImageIcon from "@mui/icons-material/Image";
 import EmojiPicker from "emoji-picker-react";
 import StringField from "../Fields/TextField";
@@ -73,10 +73,12 @@ export default function CreatePost() {
       data.appreciated = open == "ap" ? true : false;
       if (data.time) {
         let res = await dispatch(addSchedulePost(data)).unwrap();
+        dispatch(getSchedulePost())
         console.log(res);
       } else {
         delete data?.date;
         let res = await dispatch(addPost(data)).unwrap();
+        dispatch(getAllPosts())
         console.log(res);
       }
       setOpen(null);

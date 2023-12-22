@@ -53,12 +53,11 @@ export default function TimelineCard({ data }) {
         flexWrap={"nowrap"}
         padding={1}
       >
-        <Grid item xs={12} sx={{ display: "flex", gap: 2 }}>
+        <Grid item xs={12} sx={{ display: "flex", gap: 2 ,flexWrap:"wrap",justifyContent:{xs:"center",lg:"unset"}}}>
           <Avatar alt="Remy Sharp" src={user1} />
-
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
             <Typography variant="medium">
-              {employee.data} received an appreciation from Malar
+              {employee?.name} received an appreciation from Malar
             </Typography>
             <Box sx={{ display: "flex" }} gap={2}>
               <Typography
@@ -143,7 +142,7 @@ export default function TimelineCard({ data }) {
               horizontal: "left",
             }}
           >
-            <Button variant="no-bg" sx={{ p: 2 }} onClick={()=>setDeletePop(true)}>
+            <Button variant="no-bg" sx={{ p: 2 }} onClick={()=>setDeletePop(data?.id)}>
               Delete
             </Button>
           </Popover>

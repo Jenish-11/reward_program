@@ -39,12 +39,12 @@ export default function SchedulePopup() {
   let schedPost = () =>
     getspost?.map((item, i) => {
       if (value == "appreciation") {
-        if (item?.appreciated) return <PostImage data={item} index={i} />;
+        if (item?.appreciated) return <PostImage data={item} index={i} schd={true} />;
       }
       if (value == "post") {
-        if (!item?.appreciated) return <PostImage data={item} index={i} />;
+        if (!item?.appreciated) return <PostImage data={item} index={i} schd={true}/>;
       }
-      if (value == "all") return <PostImage data={item} index={i} />;
+      if (value == "all") return <PostImage data={item} index={i} schd={true}/>;
     });
 
   React.useEffect(() => {

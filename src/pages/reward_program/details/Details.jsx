@@ -19,6 +19,20 @@ export default function Details() {
           <MoreHorizIcon /> {row.name}
         </Box>
       ),
+      sortFunction: (rowA, rowB) => {
+        const a = rowA?.name.toLowerCase();
+        const b = rowB?.name.toLowerCase();
+
+        if (a > b) {
+          return 1;
+        }
+
+        if (b > a) {
+          return -1;
+        }
+
+        return 0;
+      },
       sortable: true,
       omit_name: "name",
     },
