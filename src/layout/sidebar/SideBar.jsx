@@ -8,32 +8,8 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { menus } from "../../helpers/sidebaricons";
 import ImageCommon from "../../components/ImageComponents/ImageCommon";
 import { rewardp } from "../../helpers/images";
-export const sidebarClasses = {
-  root: "ps-sidebar-root",
-  container: "ps-sidebar-container",
-  image: "ps-sidebar-image",
-  backdrop: "ps-sidebar-backdrop",
-  collapsed: "ps-collapsed",
-  toggled: "ps-toggled",
-  rtl: "ps-rtl",
-  broken: "ps-broken",
-};
+import { menuClasses } from "../../helpers/utils";
 
-export const menuClasses = {
-  root: "ps-menu-root",
-  menuItemRoot: "ps-menuitem-root",
-  subMenuRoot: "ps-submenu-root",
-  button: "ps-menu-button",
-  prefix: "ps-menu-prefix",
-  suffix: "ps-menu-suffix",
-  label: "ps-menu-label",
-  icon: "ps-menu-icon",
-  subMenuContent: "ps-submenu-content",
-  SubMenuExpandIcon: "ps-submenu-expand-icon",
-  disabled: "ps-disabled",
-  active: "ps-active",
-  open: "ps-open",
-};
 export default function SideBar({ openSidebar, setOpenSidebar }) {
   const themes = {
     light: {
@@ -206,20 +182,6 @@ export default function SideBar({ openSidebar, setOpenSidebar }) {
           Reward
         </MenuItem>
       </Menu>
-
-      {/* <IconButton
-        // onClick={() => setCollapsed(!collapsed)}
-        sx={{
-          position: "absolute",
-          background: "transparent",
-          color: "blue",
-          right: 0,
-          top: "50vh",
-          alignItems: "center",
-        }}
-      >
-        {"▶"}
-      </IconButton> */}
     </Sidebar>
   );
 }

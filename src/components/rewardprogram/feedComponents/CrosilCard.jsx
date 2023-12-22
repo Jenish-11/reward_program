@@ -27,12 +27,13 @@ export default function CarosilCard() {
                 justifyContent={"space-between"}
                 alignItems={"center"}
               >
-                {item?.image&&<ImageCommon src={item?.image} aspectRatio={"1"} width="55px" />}
                 <Typography variant="normal">
-                  Star Employee Award Winner Augest 2023
+              {item?.award?.name}
                 </Typography>
-                <ImageCommon src={postimage} aspectRatio={"1"} />
-                <Typography variant="high">Merdino</Typography>
+                {item?.image&&<ImageCommon src={item?.image} aspectRatio={"1"} width="100%" />}
+
+                {/* <ImageCommon src={postimage} aspectRatio={"1"} /> */}
+                <Typography variant="high">{item?.employee?.name}</Typography>
               </Box>
             );
           }

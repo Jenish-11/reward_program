@@ -25,7 +25,7 @@ export default function SharThoughts() {
               <ImageCommon src={star2} width="21px" />
             </Box>
             <Box>
-              <Typography variant="normal">Create Post</Typography>
+              <Typography variant="normal" sx={{cursor:"pointer"}}>Create Post</Typography>
             </Box>
           </Box>
           <Box
@@ -40,7 +40,7 @@ export default function SharThoughts() {
               <ImageCommon src={gift} width="21px" objectFit="contaain" />
             </Box>
             <Box>
-              <Typography variant="normal" >
+              <Typography variant="normal"  sx={{cursor:"pointer"}}>
                 Create an Appreciation
               </Typography>
             </Box>

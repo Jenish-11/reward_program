@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PrimaryHeader from "../../layout/header/PrimaryHeader";
 import SecondaryHeader from "../../layout/header/SecondaryHeader";
 import { Outlet } from "react-router-dom";
@@ -11,6 +11,7 @@ import { addPinPost, addPost, addSchedulePost, deletePost } from "../../redux/se
 
 export default function RewardProgram() {
   const dispatch = useDispatch();
+  const ref = useRef()
   const [show, setShow] = useState(false);
   const { addPost: post, addSchedulePost: spost,deletepost,addpinpost } = useSelector((state) => ({
     addPost: state.postSlice.addPost?.data,
@@ -21,6 +22,7 @@ export default function RewardProgram() {
   useEffect(() => {
     if (post || spost||addpinpost||deletepost) {
       setShow(true);
+      ref.current?.focus()
       setTimeout(() => {
         dispatch(addPost("DESTROY"));
         dispatch(deletePost("DESTROY"));
@@ -47,7 +49,7 @@ export default function RewardProgram() {
           justifyContent={"center"}
           gap={2}
           p={2}
-        >
+        ><button ref={ref}></button>
           <ImageCommon src={checked} width="19px" />
           <Typography variant="normal" fontWeight={600}>
             {post && "Post created Successfully" }

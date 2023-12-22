@@ -51,6 +51,7 @@ function App() {
               <Route path="/reward-program/feed" element={<Feed />} />
               <Route path="/reward-program/details" element={<Details />} />
             </Route>
+            <Route path="*" element={<center> Page Not Found</center>} />
           </Route>
         </Routes>
       </Router>

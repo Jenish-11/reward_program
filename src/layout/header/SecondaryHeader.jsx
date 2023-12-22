@@ -16,50 +16,10 @@ import Menu from "@mui/material/Menu";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import CreatePostPopOver from "../../components/popOver/createPostPopOver";
 
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
-
 export default function SecondaryHeader() {
   const { open, setOpen } = React.useContext(UserContext);
   const [value, setValue] = useState("summary");
-  const[popOver,setPopOver] =useState(null)
+  const [popOver, setPopOver] = useState(null);
   const navigate = useNavigate();
   const handleChange = (e, v) => {
     setValue(v);
@@ -131,9 +91,11 @@ export default function SecondaryHeader() {
       <MenuItem>
         <Button
           size="small"
+          id="create"
           className="w-full"
           aria-label="show 4 new mails"
           color="inherit"
+          onClick={(e) => setPopOver(e.currentTarget)}
         >
           Create Post
         </Button>
@@ -191,7 +153,13 @@ export default function SecondaryHeader() {
           </Box>
 
           <Box sx={{ display: { xs: "none", md: "flex", gap: 6 } }}>
-            <Button size="large" aria-label="show 4 new mails" id={"create"} color="inherit" onClick={(e)=>setPopOver(e.currentTarget)}>
+            <Button
+              size="large"
+              aria-label="show 4 new mails"
+              id={"create"}
+              color="inherit"
+              onClick={(e) => setPopOver(e.currentTarget)}
+            >
               Create Post
             </Button>
             <Button size="large" aria-label="show 4 new mails" color="inherit">
@@ -212,7 +180,11 @@ export default function SecondaryHeader() {
           </Box>
         </Toolbar>
       </AppBar>
-      <CreatePostPopOver id={"create"} open={popOver} onClose={()=>setPopOver(null)}/>
+      <CreatePostPopOver
+        id={"create"}
+        open={popOver}
+        onClose={() => setPopOver(null)}
+      />
       {renderMobileMenu}
       {renderMenu}
     </Box>
