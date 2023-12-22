@@ -1,0 +1,66 @@
+{
+  "teams": [
+    {
+      "name": "Team A",
+      "employess": ["MW001", "MW002"]
+    },
+    {
+      "name": "Team B",
+      "employess": ["MW003", "MW004"]
+    },
+    {
+      "name": "Team C",
+      "employess": ["MW005", "MW006"]
+    }
+  ],
+  "employees": [
+    {
+      "name": "Bibin",
+      "id": "MW001",
+      "image:": "user1",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500
+    },
+    {
+      "name": "Benish",
+      "id": "MW002",
+      "image:": "user2",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500
+    },
+    {
+      "name": "Jenitha",
+      "id": "MW003",
+      "image:": "user3",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500
+    },
+    {
+      "name": "BabuRaj",
+      "id": "MW004",
+      "image:": "user4",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500
+    },
+    {
+      "name": "Kibson",
+      "id": "MW005",
+      "image:": "user5",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500
+    },
+    {
+      "name": "yaro",
+      "id": "MW006",
+      "image:": "user6",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500
+    }
+  ]
+}

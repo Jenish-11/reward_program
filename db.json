@@ -1,0 +1,198 @@
+{
+  "teams": [
+    {
+      "id": 1,
+      "name": "Team A"
+    },
+    {
+      "id": 2,
+      "name": "Team B"
+    },
+    {
+      "id": 3,
+      "name": "Team C"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Bibin",
+      "employee_id": "MW001",
+      "image:": "user1",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500,
+      "teamId": 1
+    },
+    {
+      "id": 2,
+      "name": "Benish",
+      "employee_id": "MW002",
+      "image:": "user2",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500,
+      "teamId": 1
+    },
+    {
+      "id": 3,
+      "name": "Jenitha",
+      "employee_id": "MW003",
+      "image:": "user3",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500,
+      "teamId": 2
+    },
+    {
+      "id": 4,
+      "name": "BabuRaj",
+      "employee_id": "MW004",
+      "image:": "user4",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500,
+      "teamId": 2
+    },
+    {
+      "id": 5,
+      "name": "Kibson",
+      "employee_id": "MW005",
+      "image:": "user5",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500,
+      "teamId": 3
+    },
+    {
+      "id": 6,
+      "name": "yaro",
+      "employee_id": "MW006",
+      "image:": "user6",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500,
+      "teamId": 3
+    },
+    {
+      "id": 8,
+      "name": "yaro3",
+      "employee_id": "MW008",
+      "image:": "user6",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500,
+      "teamId": 3
+    },
+    {
+      "id": 9,
+      "name": "yaro",
+      "employee_id": "MW009",
+      "image:": "user6",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500,
+      "teamId": 1
+    },
+    {
+      "id": 10,
+      "name": "yaro",
+      "employee_id": "MW0010",
+      "image:": "user6",
+      "recieved_points": 1000,
+      "redeemed_points": 500,
+      "balance_points": 500,
+      "teamId": 2
+    }
+  ],
+  "awards": [
+    {
+      "id": 1,
+      "name": "Star Employee"
+    },
+    {
+      "id": 2,
+      "name": "Critical Superstar"
+    },
+    {
+      "id": 3,
+      "name": "Ultimate Coder"
+    },
+    {
+      "id": 4,
+      "name": "Ultra Instinct"
+    }
+  ],
+  "post": [
+    {
+      "message": "😂😇",
+      "teamId": 1,
+      "employeeId": 2,
+      "awardId": 1,
+      "image": "data:image/png;base64,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",
+      "pin": false,
+      "created_at": "Thu, 21 Dec 2023 23:21:34 GMT",
+      "appreciated": false,
+      "id": 1,
+      "updated_at": "Thu, 21 Dec 2023 23:29:44 GMT"
+    },
+    {
+      "message": "🙂",
+      "teamId": 3,
+      "employeeId": 5,
+      "awardId": 1,
+      "pin": false,
+      "created_at": "Thu, 21 Dec 2023 23:23:25 GMT",
+      "appreciated": true,
+      "id": 2
+    },
+    {
+      "message": "ss",
+      "teamId": 1,
+      "employeeId": 1,
+      "awardId": 1,
+      "pin": false,
+      "created_at": "Thu, 21 Dec 2023 23:23:53 GMT",
+      "appreciated": false,
+      "id": 3
+    },
+    {
+      "message": "f😀",
+      "teamId": 1,
+      "employeeId": 2,
+      "awardId": 2,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwAAABsCAYAAACPZlfNAAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAaOSURBVHgB7Z2NceM2EIXfuYG4hO3g3EGQDtyBmQ6cCsQOrFQgdpB0QKWC+CqQUoHvKnC4JpFIMkksSBAEpP1m1rRGovDziAUWBKEvyA9qzDR239jX7kjd0Zpl39ivjR2hRIEr3zS2baxu7K2xd0/jcx6gLAaL9IzpAvVZDSUoLNIj2op9X8iUALBQG4RrSWN2D2Uy1FiF5UWy9jeUSfBV/oJ4QlkzULzZII7ru2xZBlfEFyyPQduqQg6tvzf2DW189dq9PnbH7yefO0LxIpT7O6KNxQq0/Z8SGELrjua6sxIq0OI8YXpfxedxSzJQorDBdKFKaKwUlR1UqBBwXRRYsL/mBGr4i7WDCnVJn4d6QUC4wn0HFwdoH9VHn1jWnhGAKWJtoa2qjzGxbNcxGx+xOMFHKH24xLJGmIFPQHyAxlJDSMV6xwx8EuFWqC6wH5963GEihUciFZQhfMQ6YKKHIshnMCooQ0QRC93JKtY8ooklTUjv7A4TTSyKkciVE00sQOYK36BiDRFVLGliBZQ+oopFkLWuLZQ+oorFVMKENDD+THSxSJiYgXLJKtN2lSCxHZRLuE6ii0WCxHRU+JlVxGIqQYIllFNWEwtwjwyDJ5g5q4pVCBItoVhWFYupBQkTFGZ1sUiQ8A4Ks7pYTCFIXJ8VTkQsphYkfuskI9a9IANB1sZljI9YfF+QsCBGkIlbdoe+Yi0+v7qFusMhkhOLqaGjwz6SFAuCzIRatXu6Fwe3Wq6QVG/PJCvWgyBDIfqvDYbdbWqiJSsW8+jIUIiF+ITECj1C0mIxJcYztcd8XBdFKv1k8mIxFcYzFmLNRgFZJawpWhZiMTXGM1diPpLA3NoG8clGLMD9nFeBMLhivbVES1ms3rSOGM+kQTgqyCsnxlRYqmIZnHs+/p/sm64nUgzCUkNeSU9YjlTFGhqg/bezqiuzhLD4PhttEJ5UxWIOI3mpgfiCAfJVxWdXViBSFss1OPuIidcQDPAT7YAw+UhZLIbgztdqgtkMxhItdbEYgkAw16Bj6ftgD5A/ijtVtBzEYgwELvHo+JDB8kgmoKdWaC5iMQbuCzZa4OyigLxia+F35iQWU8CRx7vmzz+OL4lViKqx34SfNXDPO/L7BWS8NvYLzrefXQNyvP+D/1QYV9VVMaEpIW8VQzud5dayLK7puw8tnhHG/YSkhLzCNxfn5ioWw3U9lt+SP1Q4PhRkJ7EJTJkszlksxjVa/liqQXAXjrAOFeQC1B6fTVEsr6UaLmULrMOUPRlzFIuR3JXHXffhV8eXLR08D8GjNh69ufInJZXRYB+Pjvf/On2R+kJSgnwKK7eWZXGV72yphkG6/ZiFMF201MWS9F/m9AQujKsfK7E+BP8fMchhk01XaMX2qQw13AVPAZ/J4lx2RD1gvBz7vpMkKhukgcH1iCVxh0XfiZKlaFukQ4H8xWIquOudhk6uHSeyK0qpItgrHHCexz+Qj1gEt1j7sS+QBG8l0oLQ5rtAfg8dbjDRHVoko8XUWlmuEGSb2Jxxd/GaZwB+xzj2h7GVeTzBHdvuIUAy+NBWNg+CLDQh6RdWgi/bQZlKhcD1S4IvZDNQfDGQ1S3BE8kNxAPUNfrAdcV1toj3kowY2V6gSJFsL8uCEiZSChJgc93LUeTL+ErMRHLHV7eUHYcg81YHBMBAdmVof9YPQX4fjxAI6QqmnCZdYyFdk1IiMNKEd1AsXBdS7xQcgvzGoYomF2vR/r8QZuLWRZOKxVZgYUqPzCy+0WNi+K6jLBGJCvJMHXAbohH8VnVFv3tfQ5459tMFrheeOPBZzbXKgqYpy6hfcF3Dfi6Lz68ZWbFWq4Mpoh1wHbP8Bv4LW5OIU6c+sLBDnn0bl7eCf3n3SMy7+DzPddq3bZCHcFzZnFfflcdsFRKlhH9hrJtMVbg5QrGVSJwC0wtnXWUKy9UMWq8xtSxZjYwJ8x8P4vN5dVZM8Qhta5r7EGG2EwYl5hX8VLwd2ngnpICEthVsMf8Cs7ZoQPwFy0O42KAxALx+8rWxb93/x85wcrTcd0bd8Wv3/wPCjto4P7zPyB5XQolwV3FK9oYr/tVCwrQYJlVj93cTN2wJeQu3w42uYSG0wh2QvkjW9ekSiI4CbYedmlCcJx6dqlADENYV761Lm2PA5ESKMayfA1cYD79t/PUzwsNhAYcHPCz/szumuPHKB6kL1gcLRydHNhtr/YTPrYIr/wf+j9dsDMfHPT7HbUnzL0NpgRRYttVxAAAAAElFTkSuQmCC",
+      "pin": true,
+      "created_at": "Thu, 21 Dec 2023 23:24:18 GMT",
+      "appreciated": false,
+      "id": 4,
+      "updated_at": "Thu, 21 Dec 2023 23:29:52 GMT"
+    }
+  ],
+  "schedule_post": [
+    {
+      "id": 1,
+      "team": 1,
+      "message": "Hi",
+      "award": 1,
+      "employee": 1,
+      "image": "",
+      "appreciated": false,
+      "date": "",
+      "time": "",
+      "created_at": ""
+    },
+    {
+      "date": "Thu, 21 Dec 2023 21:36:42 GMT",
+      "message": "jj🙃",
+      "teamId": 3,
+      "employeeId": 5,
+      "awardId": 2,
+      "time": "05:06:PM",
+      "pin": false,
+      "created_at": "Thu, 21 Dec 2023 21:37:07 GMT",
+      "appreciated": true,
+      "id": 2
+    }
+  ]
+}

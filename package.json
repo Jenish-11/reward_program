@@ -1,0 +1,51 @@
+{
+  "name": "employee_rewards",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm-run-all -p start:react start:json-server",
+    "start:react": "vite",
+    "start:json-server": "json-server --watch db.json --port 3001",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.0",
+    "@mui/material": "^5.15.0",
+    "@mui/x-date-pickers": "^6.18.5",
+    "@reduxjs/toolkit": "^2.0.1",
+    "@tinymce/tinymce-react": "^4.3.2",
+    "axios": "^1.6.2",
+    "dayjs": "^1.11.10",
+    "emoji-picker-react": "^4.5.16",
+    "json-server": "^0.17.4",
+    "jsonfile": "^6.1.0",
+    "react": "^18.2.0",
+    "react-data-table-component": "^7.5.4",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.49.2",
+    "react-material-ui-carousel": "^3.4.2",
+    "react-multi-carousel": "^2.8.4",
+    "react-pro-sidebar": "^1.1.0-alpha.1",
+    "react-redux": "^9.0.4",
+    "react-router-dom": "^6.21.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.7",
+    "vite": "^5.0.8"
+  }
+}
