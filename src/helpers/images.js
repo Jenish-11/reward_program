@@ -25,3 +25,12 @@ export { default as star2 } from "../assets/images/medal/star2.png";
 //Image
 export { default as postimage } from "../assets/images/postimage.png";
 export { default as warning } from "../assets/images/warning.png";
+
+
+
+//sidebar icons
+export { default as dashboard } from "../assets/images/sidebaricons/dashboard.png";
+export { default as fileicon } from "../assets/images/sidebaricons/fileicon.png";
+export { default as partner } from "../assets/images/sidebaricons/partner.png";
+export { default as rewardp } from "../assets/images/sidebaricons/rewardp.png";
+export { default as report } from "../assets/images/sidebaricons/report.png";

@@ -5,6 +5,9 @@ import { Button, IconButton, Switch, Typography } from "@mui/material";
 import { StyledLogo } from "../header/SIdeBarHeader";
 import { UserContext } from "../../App";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { menus } from "../../helpers/sidebaricons";
+import ImageCommon from "../../components/ImageComponents/ImageCommon";
+import { rewardp } from "../../helpers/images";
 export const sidebarClasses = {
   root: "ps-sidebar-root",
   container: "ps-sidebar-container",
@@ -170,50 +173,32 @@ export default function SideBar({ openSidebar, setOpenSidebar }) {
       //   image="https://user-images.githubusercontent.com/25878302/144499035-2911184c-76d3-4611-86e7-bc4e8ff84ff5.jpg"
     >
       {/* <SidebarHeader /> */}
-      <Menu menuItemStyles={menuItemStyles}>
-        <MenuItem
-          //   component={<Link href={"/"} />}
-          icon={<StyledLogo>JE</StyledLogo>}
-        >
-          <Typography
-            variant="subtitle1"
-            fontWeight={700}
-            width={100}
-            color="#0098e5"
-          >
-            JENISH
-          </Typography>
-        </MenuItem>
-      </Menu>
-      <Menu menuItemStyles={menuItemStyles}>
-        <MenuItem
-          //   component={<Link href={'/'} />}
-          icon={
-            <>
-              <StyledLogo>D</StyledLogo>
-            </>
-          }
-        >
-          {" "}
-          Dashboard
-        </MenuItem>
-        <MenuItem
-          //   component={<Link href={'/category'} />}
-          icon={
-            <>
-              <StyledLogo>C</StyledLogo>
-            </>
-          }
-        >
-          {" "}
-          Category
-        </MenuItem>
+
+      <Menu menuItemStyles={menuItemStyles} style={{ gap: "89px" }}>
+        {menus.map((icon, i) => {
+          return (
+            <MenuItem
+              //   component={<Link href={'/'} />}
+              style={{ marginTop: "25px" }}
+              icon={
+                <>
+                  <ImageCommon src={icon} aspectRatio={"1"} />
+                </>
+              }
+            >
+              {" "}
+              Dashboard
+            </MenuItem>
+          );
+        })}
+
         <MenuItem
           component={<Link to={"/reward-program/summary"} />}
-          active={window.location.pathname.split("/")[1]=="reward-program"}
+          style={{ marginTop: "25px" }}
+          active={window.location.pathname.split("/")[1] == "reward-program"}
           icon={
             <>
-              <StyledLogo>R</StyledLogo>
+              <ImageCommon src={rewardp} aspectRatio={"1"} />
             </>
           }
         >
